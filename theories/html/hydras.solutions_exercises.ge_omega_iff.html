@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>hydras.solutions_exercises.ge_omega_iff</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library hydras.solutions_exercises.ge_omega_iff</h1>
+
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">hydras</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="hydras.Epsilon0.T1.html#"><span class="id" title="library">T1</span></a> <a class="idref" href="hydras.Epsilon0.E0.html#"><span class="id" title="library">E0</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Coq</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.micromega.Lia.html#"><span class="id" title="library">Lia</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">E0_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="ge_omega_iff" class="idref" href="#ge_omega_iff"><span class="id" title="lemma">ge_omega_iff</span></a> (<a id="alpha:1" class="idref" href="#alpha:1"><span class="id" title="binder">alpha</span></a> : <a class="idref" href="hydras.Epsilon0.E0.html#E0"><span class="id" title="class">E0</span></a>):<br/>
+&nbsp;&nbsp;<a class="idref" href="hydras.Epsilon0.E0.html#omega"><span class="id" title="abbreviation">omega</span></a> <a class="idref" href="hydras.Epsilon0.E0.html#b8cab4266e2151a748b18e18aa1598f9"><span class="id" title="notation">o</span></a><a class="idref" href="hydras.Epsilon0.E0.html#b8cab4266e2151a748b18e18aa1598f9"><span class="id" title="notation">≤</span></a> <a class="idref" href="hydras.solutions_exercises.ge_omega_iff.html#alpha:1"><span class="id" title="variable">alpha</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"><span class="id" title="notation">↔</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"><span class="id" title="notation">(</span></a><span class="id" title="keyword">∀</span> <a id="i:2" class="idref" href="#i:2"><span class="id" title="binder">i</span></a>:<a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>, <a class="idref" href="hydras.solutions_exercises.ge_omega_iff.html#i:2"><span class="id" title="variable">i</span></a> <a class="idref" href="hydras.Epsilon0.E0.html#829ecb68b8b34ee91d22b1ffdd27a15c"><span class="id" title="notation">+</span></a> <a class="idref" href="hydras.solutions_exercises.ge_omega_iff.html#alpha:1"><span class="id" title="variable">alpha</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="hydras.solutions_exercises.ge_omega_iff.html#alpha:1"><span class="id" title="variable">alpha</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"><span class="id" title="notation">)</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">alpha</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">a</span> <span class="id" title="var">Ha</span>]; <span class="id" title="tactic">unfold</span> <a class="idref" href="hydras.Epsilon0.E0.html#Le"><span class="id" title="definition">Le</span></a>; <span class="id" title="var">cbn</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">a</span>; <span class="id" title="var">cbn</span>; <span class="id" title="tactic">split</span>; <span class="id" title="tactic">intros</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">rewrite</span> <a class="idref" href="hydras.Epsilon0.E0.html#Le_iff"><span class="id" title="lemma">Le_iff</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>; <span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span> <span class="id" title="keyword">as</span> (<span class="id" title="var">H</span>, (<span class="id" title="var">Hle</span>, <span class="id" title="var">Hnf</span>)).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">now</span> <span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Epsilon0.T1.html#le_zero_inv"><span class="id" title="lemma">le_zero_inv</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">Hle</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">specialize</span> (<span class="id" title="var">H</span> 1); <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>; <span class="id" title="var">now</span> <span class="id" title="tactic">injection</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">intros</span> <span class="id" title="var">i</span>; <span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Epsilon0.E0.html#E0_eq_intro"><span class="id" title="lemma">E0_eq_intro</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">i</span>; <span class="id" title="tactic">auto</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">a1</span>; <span class="id" title="tactic">auto</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="hydras.Epsilon0.E0.html#Le_iff"><span class="id" title="lemma">Le_iff</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>; <span class="id" title="var">cbn</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span>, <span class="id" title="var">H0</span>; <span class="id" title="tactic">rewrite</span> <a class="idref" href="hydras.Prelude.MoreOrders.html#le_lt_eq"><span class="id" title="lemma">le_lt_eq</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H0</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H0</span>; <span class="id" title="tactic">discriminate</span>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">destruct</span> <span class="id" title="var">a1</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">specialize</span> (<span class="id" title="var">H</span> 1); <span class="id" title="var">cbn</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">a2</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="hydras.Epsilon0.T1.html#zero"><span class="id" title="constructor">zero</span></a>) <span class="id" title="tactic">by</span> (<span class="id" title="tactic">eapply</span> <a class="idref" href="hydras.Epsilon0.T1.html#nf_of_finite"><span class="id" title="lemma">nf_of_finite</span></a>; <span class="id" title="tactic">eauto</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">subst</span>; <span class="id" title="tactic">compute</span> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>; <span class="id" title="tactic">inversion</span> <span class="id" title="var">H</span>; <span class="id" title="var">lia</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">rewrite</span>  <a class="idref" href="hydras.Epsilon0.E0.html#Le_iff"><span class="id" title="lemma">Le_iff</span></a>; <span class="id" title="var">cbn</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Epsilon0.T1.html#LE_trans"><span class="id" title="lemma">LE_trans</span></a> <span class="id" title="keyword">with</span> (<a class="idref" href="hydras.Epsilon0.T1.html#phi0"><span class="id" title="abbreviation">T1.phi0</span></a> (<a class="idref" href="hydras.Epsilon0.T1.html#ocons"><span class="id" title="constructor">ocons</span></a> <span class="id" title="var">a1_1</span> <span class="id" title="var">n0</span> <span class="id" title="var">a1_2</span>)).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="tactic">repeat</span> <span class="id" title="tactic">split</span>; <span class="id" title="tactic">auto</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Epsilon0.T1.html#phi0_mono"><span class="id" title="lemma">T1.phi0_mono</span></a>; <span class="id" title="tactic">apply</span>  <a class="idref" href="hydras.Prelude.Comparable.html#le_trans"><span class="id" title="lemma">le_trans</span></a> <span class="id" title="keyword">with</span> (<a class="idref" href="hydras.Epsilon0.T1.html#ocons"><span class="id" title="constructor">ocons</span></a> <span class="id" title="var">a1_1</span> 0 <a class="idref" href="hydras.Epsilon0.T1.html#zero"><span class="id" title="constructor">zero</span></a>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- <span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Epsilon0.T1.html#phi0_mono"><span class="id" title="lemma">T1.phi0_mono</span></a>; <span class="id" title="tactic">auto</span> <span class="id" title="keyword">with</span> <span class="id" title="var">T1</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- <span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Epsilon0.T1.html#le_phi0"><span class="id" title="lemma">le_phi0</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- <span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Epsilon0.T1.html#nf_phi0"><span class="id" title="lemma">nf_phi0</span></a>; <span class="id" title="tactic">eauto</span> <span class="id" title="keyword">with</span> <span class="id" title="var">T1</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;× <span class="id" title="tactic">repeat</span> <span class="id" title="tactic">split</span>; <span class="id" title="tactic">eauto</span> <span class="id" title="keyword">with</span> <span class="id" title="var">T1</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Epsilon0.T1.html#le_phi0"><span class="id" title="lemma">le_phi0</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

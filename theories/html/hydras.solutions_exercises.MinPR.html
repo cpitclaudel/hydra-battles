@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>hydras.solutions_exercises.MinPR</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library hydras.solutions_exercises.MinPR</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+Prove that Stdlib's function <span class="inlinecode"><span class="id" title="var">min</span></span> is primitive recursive 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">hydras</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span>  <a class="idref" href="hydras.Ackermann.primRec.html#"><span class="id" title="library">primRec</span></a> <a class="idref" href="hydras.Ackermann.extEqualNat.html#"><span class="id" title="library">extEqualNat</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Coq</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Arith.Min.html#"><span class="id" title="library">Min</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Arith.Compare_dec.html#"><span class="id" title="library">Compare_dec</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.micromega.Lia.html#"><span class="id" title="library">Lia</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.setoid_ring.ArithRing.html#"><span class="id" title="library">ArithRing</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Section</span> <a id="Proof_of_MinIsPR" class="idref" href="#Proof_of_MinIsPR"><span class="id" title="section">Proof_of_MinIsPR</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Let</span> <a id="Proof_of_MinIsPR.minPR" class="idref" href="#Proof_of_MinIsPR.minPR"><span class="id" title="variable">minPR</span></a> (<a id="a:1" class="idref" href="#a:1"><span class="id" title="binder">a</span></a> <a id="b:2" class="idref" href="#b:2"><span class="id" title="binder">b</span></a>: <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>) : <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Init.Peano.html#ea2ff3d561159081cea6fb2e8113cc54"><span class="id" title="notation">(</span></a><a class="idref" href="hydras.Ackermann.extEqualNat.html#charFunction"><span class="id" title="definition">charFunction</span></a> 2 <a class="idref" href="hydras.Ackermann.primRec.html#leBool"><span class="id" title="definition">leBool</span></a> <a class="idref" href="hydras.solutions_exercises.MinPR.html#a:1"><span class="id" title="variable">a</span></a> <a class="idref" href="hydras.solutions_exercises.MinPR.html#b:2"><span class="id" title="variable">b</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Init.Peano.html#ea2ff3d561159081cea6fb2e8113cc54"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Init.Peano.html#ea2ff3d561159081cea6fb2e8113cc54"><span class="id" title="notation">×</span></a> <a class="idref" href="hydras.solutions_exercises.MinPR.html#a:1"><span class="id" title="variable">a</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Init.Peano.html#0dacc1786c5ba797d47dd85006231633"><span class="id" title="notation">+</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Init.Peano.html#ea2ff3d561159081cea6fb2e8113cc54"><span class="id" title="notation">(</span></a><a class="idref" href="hydras.Ackermann.extEqualNat.html#charFunction"><span class="id" title="definition">charFunction</span></a> 2 <a class="idref" href="hydras.Ackermann.primRec.html#ltBool"><span class="id" title="definition">ltBool</span></a> <a class="idref" href="hydras.solutions_exercises.MinPR.html#b:2"><span class="id" title="variable">b</span></a> <a class="idref" href="hydras.solutions_exercises.MinPR.html#a:1"><span class="id" title="variable">a</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Init.Peano.html#ea2ff3d561159081cea6fb2e8113cc54"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Init.Peano.html#ea2ff3d561159081cea6fb2e8113cc54"><span class="id" title="notation">×</span></a> <a class="idref" href="hydras.solutions_exercises.MinPR.html#b:2"><span class="id" title="variable">b</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="minPR_correct" class="idref" href="#minPR_correct"><span class="id" title="lemma">minPR_correct</span></a> : <a class="idref" href="hydras.Ackermann.extEqualNat.html#extEqual"><span class="id" title="definition">extEqual</span></a> 2 <a class="idref" href="hydras.solutions_exercises.MinPR.html#Proof_of_MinIsPR.minPR"><span class="id" title="variable">minPR</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Arith.Min.html#min"><span class="id" title="abbreviation">min</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span>. <span class="id" title="var">cbn</span>. <span class="id" title="tactic">unfold</span> <a class="idref" href="hydras.Ackermann.primRec.html#leBool"><span class="id" title="definition">leBool</span></a>, <a class="idref" href="hydras.Ackermann.primRec.html#ltBool"><span class="id" title="definition">ltBool</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Arith.Compare_dec.html#le_lt_dec"><span class="id" title="definition">le_lt_dec</span></a> <span class="id" title="var">x</span> <span class="id" title="var">y</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">cbn</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Arith.PeanoNat.html#Nat.min_l"><span class="id" title="lemma">PeanoNat.Nat.min_l</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">l</span>); <span class="id" title="tactic">ring</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Arith.Min.html#min_spec"><span class="id" title="definition">min_spec</span></a> <span class="id" title="var">y</span> <span class="id" title="var">x</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span>; <span class="id" title="var">ring_simplify</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Arith.PeanoNat.html#Nat.min_comm"><span class="id" title="lemma">PeanoNat.Nat.min_comm</span></a>. <span class="id" title="tactic">auto</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span>; <span class="id" title="var">lia</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="minPR_PR" class="idref" href="#minPR_PR"><span class="id" title="lemma">minPR_PR</span></a> : <a class="idref" href="hydras.Ackermann.primRec.html#isPR"><span class="id" title="definition">isPR</span></a> 2 <a class="idref" href="hydras.solutions_exercises.MinPR.html#Proof_of_MinIsPR.minPR"><span class="id" title="variable">minPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">minPR</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span>   <a class="idref" href="hydras.Ackermann.primRec.html#compose2_2IsPR"><span class="id" title="lemma">compose2_2IsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Ackermann.primRec.html#compose2_2IsPR"><span class="id" title="lemma">compose2_2IsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Ackermann.primRec.html#leIsPR"><span class="id" title="lemma">leIsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Ackermann.primRec.html#filter10IsPR"><span class="id" title="lemma">filter10IsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Ackermann.primRec.html#idIsPR"><span class="id" title="lemma">idIsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Ackermann.primRec.html#multIsPR"><span class="id" title="lemma">multIsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span>   <a class="idref" href="hydras.Ackermann.primRec.html#compose2_2IsPR"><span class="id" title="lemma">compose2_2IsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Ackermann.primRec.html#compose2_2IsPR"><span class="id" title="lemma">compose2_2IsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Ackermann.primRec.html#filter01IsPR"><span class="id" title="lemma">filter01IsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Ackermann.primRec.html#idIsPR"><span class="id" title="lemma">idIsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Ackermann.primRec.html#filter10IsPR"><span class="id" title="lemma">filter10IsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Ackermann.primRec.html#idIsPR"><span class="id" title="lemma">idIsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Ackermann.primRec.html#ltIsPR"><span class="id" title="lemma">ltIsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Ackermann.primRec.html#filter01IsPR"><span class="id" title="lemma">filter01IsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Ackermann.primRec.html#idIsPR"><span class="id" title="lemma">idIsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Ackermann.primRec.html#multIsPR"><span class="id" title="lemma">multIsPR</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.Ackermann.primRec.html#plusIsPR"><span class="id" title="lemma">plusIsPR</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="minIsPR" class="idref" href="#minIsPR"><span class="id" title="lemma">minIsPR</span></a> : <a class="idref" href="hydras.Ackermann.primRec.html#isPR"><span class="id" title="definition">isPR</span></a> 2 <a class="idref" href="http://coq.inria.fr/distrib/V8.13.2/stdlib//Coq.Arith.Min.html#min"><span class="id" title="abbreviation">min</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <a class="idref" href="hydras.solutions_exercises.MinPR.html#minPR_PR"><span class="id" title="lemma">minPR_PR</span></a> <span class="id" title="keyword">as</span> [<span class="id" title="var">f</span> <span class="id" title="var">Hf</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">∃</span> <span class="id" title="var">f</span>; <span class="id" title="tactic">eapply</span> <a class="idref" href="hydras.Ackermann.extEqualNat.html#extEqualTrans"><span class="id" title="lemma">extEqualTrans</span></a> <span class="id" title="keyword">with</span> (1:= <span class="id" title="var">Hf</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="hydras.solutions_exercises.MinPR.html#minPR_correct"><span class="id" title="lemma">minPR_correct</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="hydras.solutions_exercises.MinPR.html#Proof_of_MinIsPR"><span class="id" title="section">Proof_of_MinIsPR</span></a>.<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
